@@ -28,7 +28,16 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
 
     public MiembroInmobiliario(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
     }
-
+    /**
+     * Incrementa los puntos de reputación del usuario y actualiza su rango si es necesario.
+     * <p>
+     * Este método suma la cantidad especificada al total actual y, posteriormente,arroja una verificación interna para determinar si el usuario ha ascendido
+     * o descendido de categoría.
+     *
+     * @param puntosNuevos Cantidad de puntos a sumar. Debe ser un valor estrictamente positivo.
+     * @throws IllegalArgumentException Si {@code puntosNuevos} es menor que cero.
+     * @see #verificarRango()
+     */
     @Override
     public void actualizarPuntos(int puntosNuevos) {
         if (puntosNuevos < 0) {
@@ -37,6 +46,20 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
         this.puntosReputacion += puntosNuevos;
         this.verificarRango();
     }
+    /**
+     * Evalúa y actualiza el rango del usuario en base a sus puntos de reputación acumulados.
+     * <p>
+     * El método aplica una jerarquia para asignar el nuevo {@link RangoUsuario}.
+     * La jerarquia corresponde a:
+     * <ul>
+     *     <li><b>3000+ puntos:</b> {@link RangoUsuario#MAGNATE_INMOBILIARIO}</li>
+     *     <li><b>1000 - 2999 puntos:</b> {@link RangoUsuario#EXPERTO_INMOBILIARIO}</li>
+     *     <li><b>500 - 999 puntos:</b> {@link RangoUsuario#INVERSIONISTA}</li>
+     *     <li><b>Menos de 500 puntos:</b> {@link RangoUsuario#PRINCIPIANTE}</li>
+     * </ul>
+     *
+     * Este método debe ser llamado cada vez que se modifique la variable {@code puntosReputacion}.
+     */
     @Override
     public void verificarRango() {
         if (this.puntosReputacion >= 3000) {

@@ -63,15 +63,38 @@ public class Oferta {
     public Inmueble getInmueble() {
         return inmueble;
     }
+    /**
+     * Calcula el monto de la comisión inmobiliaria basada en un porcentaje aplicado
+     * al valor de la oferta.
+     * <p>
+     * El cálculo se realiza multiplicando el {@code montoOfrecido} actual del inmueble
+     * por el factor porcentual proporcionado.
+     *
+     * @param porcentaje El factor de comisión (por ejemplo, 0.05 para un 5%).
+     * @return El valor total de la comisión en la misma moneda que el monto ofrecido.
+     * @see #montoOfrecido
+     */
     public double calcularComisionInmobiliaria(double porcentaje) {
         double porcentajeComision = porcentaje;
         return this.montoOfrecido * porcentajeComision;
     }
-
+    /**
+     * Cambia formalmente el estado de la oferta a aceptada.
+     * <p>
+     * Al ejecutar este método, se confirma que el propietario está de acuerdo con los términos propuestos. Este cambio suele ser el paso previo a la finalización del contrato o al cierre de la publicación.
+     *
+     * @see EstadoOferta#ACEPTADA
+     */
     public void aceptar() {
         this.estadoOferta = EstadoOferta.ACEPTADA;
     }
-
+    /**
+     * Cambia formalmente el estado de la oferta a rechazada.
+     * <p>
+     * Al ejecutar este método, se confirma que el propietario no acepto la oferta.
+     *
+     * @see EstadoOferta#RECHAZADA
+     */
     public void rechazar() {
         this.estadoOferta = EstadoOferta.RECHAZADA;
     }

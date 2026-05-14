@@ -30,7 +30,18 @@ public class Inmueble {
         this.estado = EstadoInmueble.DISPONIBLE;
         this.ofertasRecibidas = new ArrayList<>();
     }
-
+    /**
+     * Registra una oferta recibida solo si el inmueble se encuentra disponible.
+     * Para que el registro sea exitoso, deben cumplirse dos condiciones:
+     * <ul>
+     *     <li>La {@code oferta} no debe ser nula.</li>
+     *     <li>El estado actual del inmueble debe ser {@link EstadoInmueble#DISPONIBLE}.</li>
+     * </ul>
+     * Si alguna de estas condiciones falla, la oferta es ignorada y no se añade a la lista.
+     * @param oferta El objeto {@link Oferta} que se desea registrar.
+     * @see EstadoInmueble
+     * @see #ofertasRecibidas
+     */
     public void registrarOferta(Oferta oferta) {
         if (oferta != null && this.estado == EstadoInmueble.DISPONIBLE) {
             this.ofertasRecibidas.add(oferta);

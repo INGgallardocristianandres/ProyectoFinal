@@ -32,12 +32,26 @@ public class Comprador extends MiembroInmobiliario {
     public void setHistorialBusquedas(List<Busqueda> historialBusquedas) {
         this.historialBusquedas = historialBusquedas;
     }
+    /**
+     * Añade un inmueble a la lista de favoritos del usuario.
+     * El método verifica que el inmueble no sea nulo y que no haya sido agregado previamente para asi evitar redundancia
+     * @param inmueble El objeto {@link Inmueble} que se desea marcar como favorito.
+     *                 Si es {@code null}, el método no realiza ninguna acción.
+     * @see #favoritos
+     */
     public void agregarAFavoritos(Inmueble inmueble) {
         if (inmueble != null && !favoritos.contains(inmueble)) {
             favoritos.add(inmueble);
         }
     }
-
+    /**
+     * Registra una nueva oferta en el historial y otorga puntos de bonificación al usuario
+     * Si la oferta es válida (no nula), se añade a la colección de ofertas realizadas y se incrementa el puntaje del usuario en 5 unidades con {@link #actualizarPuntos(int)}.
+     * @param oferta El objeto {@link Oferta} que se desea procesar.
+     * Si el parámetro es {@code null}, el método no realiza ninguna operacion
+     * @see #ofertasRealizadas
+     * @see #actualizarPuntos(int)
+     */
     public void realizarOferta(Oferta oferta) {
         if (oferta != null) {
             ofertasRealizadas.add(oferta);

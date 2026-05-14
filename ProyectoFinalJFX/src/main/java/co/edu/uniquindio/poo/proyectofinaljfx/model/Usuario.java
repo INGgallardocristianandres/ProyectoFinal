@@ -20,7 +20,12 @@ public class Usuario {
     public String getContrasenia() {
         return contrasenia;
     }
-
+    /**
+     * Actualiza la contraseña del usuario.
+     * <p>
+     * @param contrasenia La nueva cadena de texto que se establecerá como contraseña. 
+     *                    No debe ser {@code null} ni estar vacía.
+     */
     public void actualizarContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
