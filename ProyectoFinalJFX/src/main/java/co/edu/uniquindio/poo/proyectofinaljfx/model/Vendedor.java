@@ -11,9 +11,16 @@ public class Vendedor extends MiembroInmobiliario {
 
     public Vendedor(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
         super(id, nombre, identificacion, telefono, correo, contrasenia, ownedByInmoSmart);
+        validarDatos(totalInmueblesPublicados, totalVentasFinalizadas);
         this.totalInmueblesPublicados = 0;
         this.totalVentasFinalizadas = 0;
         this.listaInmuebles = new ArrayList<>();
+    }
+    public static void validarDatos(int totalInmueblesPublicados, int totalVentasFinalizadas) {
+        if (totalInmueblesPublicados < 0)
+            throw new IllegalArgumentException("El total de inmuebles publicacados pueden ser negativas");
+        if (totalVentasFinalizadas < 0)
+            throw new IllegalArgumentException("El total de ventas finalizadas no puede ser negativo");
     }
     /**
      * Registra un nuevo inmueble en el sistema y actualiza las estadísticas del usuario.

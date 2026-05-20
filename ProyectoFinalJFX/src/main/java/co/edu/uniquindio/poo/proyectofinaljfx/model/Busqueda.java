@@ -12,6 +12,7 @@ public class Busqueda {
     private double areaMinima;
 
     public Busqueda(String idBusqueda, TipoInmueble tipoInmueble, String ciudad, double precioMinimo, double precioMaximo, double areaMinima) {
+        validarDatos(precioMinimo, precioMaximo, areaMinima);
         this.idBusqueda = idBusqueda;
         this.tipoInmueble = tipoInmueble;
         this.ciudad = ciudad;
@@ -20,7 +21,18 @@ public class Busqueda {
         this.areaMinima = areaMinima;
         this.fecha = LocalDate.now();
     }
+    public static void validarDatos(double precioMinimo, double precioMaximo, double areaMinima) {
+        if (precioMinimo < 0 ) {
+            throw new IllegalArgumentException("El precio mínimo no puede ser menor a 0");
+        }
+        if (precioMaximo < 0 ) {
+            throw new IllegalArgumentException("El precio máximo no puede ser menor a 0");
+        }
+        if (areaMinima < 0 ) {
+            throw new IllegalArgumentException("El área mínima no puede ser menor a 0");
+        }
 
+    }
     public String getIdBusqueda() {
         return idBusqueda;
     }

@@ -13,7 +13,7 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
     protected RangoUsuario rangoUsuario;
     protected InmoSmart ownedByInmoSmart;
     protected Usuario usuario;
-    public MiembroInmobiliario(String id, String nombre, String identificacion, String telefono, String correo,String userName, String contrasenia, InmoSmart ownedByInmoSmart) {
+    public MiembroInmobiliario(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
         this.id = id;
         this.nombre = nombre;
         this.identificacion = identificacion;
@@ -23,10 +23,7 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
         this.fechaRegistro = LocalDate.now();
         this.puntosReputacion = 0;
         this.rangoUsuario = RangoUsuario.PRINCIPIANTE;
-        this.usuario = new Usuario(userName, contrasenia);
-    }
-
-    public MiembroInmobiliario(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
+        this.usuario = new Usuario(correo, contrasenia);
     }
     /**
      * Incrementa los puntos de reputación del usuario y actualiza su rango si es necesario.

@@ -14,6 +14,7 @@ public class Transaccion {
     private Inmueble inmueble;
 
     public Transaccion(String idTransaccion, double montoFinal, double comisionInmobiliaria, TipoOferta tipoOperacion, MetodoPago metodoPago, Comprador comprador, Vendedor vendedor, Inmueble inmueble) {
+        validarDatos(montoFinal, comisionInmobiliaria);
         this.idTransaccion = idTransaccion;
         this.montoFinal = montoFinal;
         this.comisionInmobiliaria = comisionInmobiliaria;
@@ -23,6 +24,10 @@ public class Transaccion {
         this.vendedor = vendedor;
         this.inmueble = inmueble;
         this.fechaTransaccion = LocalDate.now();
+    }
+    public static void validarDatos(double montoFinal, double comisionInmobiliaria){
+        if (montoFinal < 0) throw  new IllegalArgumentException("El monto final no puede ser menor a 0");
+        if (comisionInmobiliaria < 0) throw  new IllegalArgumentException("La comisión inmobiliaria no puede ser menor a 0");
     }
 
     public String getIdTransaccion() {
