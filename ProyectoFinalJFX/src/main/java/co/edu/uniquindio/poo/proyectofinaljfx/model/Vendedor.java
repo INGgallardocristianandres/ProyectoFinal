@@ -9,8 +9,9 @@ public class Vendedor extends MiembroInmobiliario {
     private int totalVentasFinalizadas;
     private List<Inmueble> listaInmuebles;
 
-    public Vendedor(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
-        super(id, nombre, identificacion, telefono, correo, contrasenia, ownedByInmoSmart);
+    public Vendedor(String id, String nombre, String identificacion, String telefono, String correo, String userName, String contrasenia,
+                    InmoSmart ownedByInmoSmart) {
+        super(id, nombre, identificacion, telefono, correo, userName, contrasenia, ownedByInmoSmart);
         this.totalInmueblesPublicados = 0;
         this.totalVentasFinalizadas = 0;
         this.listaInmuebles = new ArrayList<>();
