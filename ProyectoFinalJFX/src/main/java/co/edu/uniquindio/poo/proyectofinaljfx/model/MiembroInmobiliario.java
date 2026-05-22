@@ -29,18 +29,8 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
         this.usuario = new Usuario(userName, contrasenia);
     }
 
-    public MiembroInmobiliario(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
-    }
-    /**
-     * Incrementa los puntos de reputación del usuario y actualiza su rango si es necesario.
-     * <p>
-     * Este método suma la cantidad especificada al total actual y, posteriormente,arroja una verificación interna para determinar si el usuario ha ascendido
-     * o descendido de categoría.
-     *
-     * @param puntosNuevos Cantidad de puntos a sumar. Debe ser un valor estrictamente positivo.
-     * @throws IllegalArgumentException Si {@code puntosNuevos} es menor que cero.
-     * @see #verificarRango()
-     */
+
+
     @Override
     public void actualizarPuntos(int puntosNuevos) {
         if (puntosNuevos < 0) {
