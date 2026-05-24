@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1100.0" style="-fx-background-color: linear-gradient(to top,#F8FAFC,#AAD2F9);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectofinaljfx.viewController.PublicarInmuebleController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="86.0" spacing="16.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+         <children>
+            <Label text="Publicar inmueble">
+               <font><Font name="System Bold" size="26.0" /></font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Volver" />
+         </children>
+         <padding><Insets left="32.0" right="32.0" /></padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox spacing="18.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+         <children>
+            <GridPane hgap="18.0" vgap="14.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="18.0" />
+                  <ColumnConstraints percentWidth="32.0" />
+                  <ColumnConstraints percentWidth="18.0" />
+                  <ColumnConstraints percentWidth="32.0" />
+               </columnConstraints>
+               <children>
+                  <Label text="Codigo" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Label text="Nombre" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <TextField fx:id="txtNombre" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                  <Label text="Ciudad" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtCiudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Direccion" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtDireccion" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Label text="Tipo inmueble" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cbTipoInmueble" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Tipo oferta" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cbTipoOferta" maxWidth="Infinity" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label text="Valor" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtValor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Area" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtArea" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Label text="Descripcion" />
+            <TextArea fx:id="txtDescripcion" prefHeight="150.0" wrapText="true" />
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#limpiarCampos" style="-fx-background-color: #E5E7EB; -fx-text-fill: #111827; -fx-background-radius: 8;" text="Limpiar" />
+                  <Button mnemonicParsing="false" onAction="#guardarInmueble" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Guardar inmueble" />
+               </children>
+            </HBox>
+         </children>
+         <padding><Insets bottom="30.0" left="34.0" right="34.0" top="34.0" /></padding>
+         <BorderPane.margin><Insets bottom="42.0" left="52.0" right="52.0" top="42.0" /></BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
