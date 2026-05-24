@@ -18,6 +18,7 @@ public class Inmueble {
 
     public Inmueble(String codigo, String nombre, String ciudad, String direccion, TipoInmueble tipoInmueble, TipoOferta tipoOferta, double valor,
                     double area, String descripcion) {
+        validarDatos(valor, area);
         this.codigo = codigo;
         this.nombre = nombre;
         this.ciudad = ciudad;
@@ -29,6 +30,10 @@ public class Inmueble {
         this.descripcion = descripcion;
         this.estado = EstadoInmueble.DISPONIBLE;
         this.ofertasRecibidas = new ArrayList<>();
+    }
+    public static void validarDatos( double valor, double area) {
+        if (valor < 0) throw new IllegalArgumentException("El valor no puede ser menor a 0");
+        if (area < 0) throw new IllegalArgumentException("El area no puede ser menor a 0");
     }
     /**
      * Registra una oferta recibida solo si el inmueble se encuentra disponible.

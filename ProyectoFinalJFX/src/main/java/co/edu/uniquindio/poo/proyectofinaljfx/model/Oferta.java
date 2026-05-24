@@ -11,6 +11,7 @@ public class Oferta {
     private Inmueble inmueble;
 
     public Oferta(String idOferta, double montoOfrecido, String mensaje,Comprador comprador, Inmueble inmueble) {
+        validarDatos(montoOfrecido);
         this.idOferta = idOferta;
         this.montoOfrecido = montoOfrecido;
         this.mensaje = mensaje;
@@ -18,6 +19,9 @@ public class Oferta {
         this.inmueble = inmueble;
         this.fecha = LocalDate.now();
         this.estadoOferta = EstadoOferta.PENDIENTE;
+    }
+    public static void validarDatos(double montoOfrecido){
+        if (montoOfrecido < 0) throw  new IllegalArgumentException("El monto ofrecido no puede ser menor a 0");
     }
 
     public String getIdOferta() {
