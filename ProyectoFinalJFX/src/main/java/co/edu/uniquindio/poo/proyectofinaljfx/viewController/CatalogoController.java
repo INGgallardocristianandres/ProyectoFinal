@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectofinaljfx.viewController;
 
+import co.edu.uniquindio.poo.proyectofinaljfx.App;
 import co.edu.uniquindio.poo.proyectofinaljfx.Controller.Controller;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.Inmueble;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.TipoInmueble;
@@ -177,8 +178,7 @@ public class CatalogoController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/co/edu/uniquindio/poo/proyectofinaljfx/" + fxml));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setTitle(titulo);
-            stage.setScene(new Scene(root));
+            App.cambiarVista(stage, root, titulo);
             stage.show();
         } catch (IOException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error de navegacion", "No fue posible cargar la vista " + fxml + ".");
@@ -193,3 +193,4 @@ public class CatalogoController {
         alert.showAndWait();
     }
 }
+
