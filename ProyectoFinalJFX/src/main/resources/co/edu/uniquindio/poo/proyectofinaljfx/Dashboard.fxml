@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1100.0" style="-fx-background-color: linear-gradient(to top,#F8FAFC,#AAD2F9);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectofinaljfx.viewController.DashboardController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="92.0" spacing="18.0" style="-fx-background-color: #F8FAFC; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Imagenes/LogoEmpresa.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtBuscar" promptText="Buscar por ciudad, inmueble o codigo" style="-fx-border-color: #E5E7EB; -fx-border-radius: 8; -fx-background-radius: 8; -fx-background-color: #F8FAFC;" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <VBox alignment="CENTER_RIGHT" prefWidth="210.0" spacing="3.0" style="-fx-background-color: #F8FAFC;">
+               <children>
+                  <Label fx:id="lblNombreUsuario" text="Usuario" textAlignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblRolUsuario" text="Rol" textFill="#64748B" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" onAction="#cerrarSesion" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Salir" />
+         </children>
+         <padding>
+            <Insets bottom="14.0" left="28.0" right="28.0" top="14.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefWidth="235.0" spacing="12.0" style="-fx-background-color: linear-gradient(to bottom,#F8FAFC,#AAD2F9);" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Menu">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCatalogoMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirCatalogo" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Catalogo" />
+            <Button fx:id="btnFavoritosMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirFavoritos" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Favoritos" />
+            <Button fx:id="btnOfertasCompradorMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirOfertasComprador" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Mis ofertas" />
+            <Button fx:id="btnPublicarMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirPublicarInmueble" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Publicar inmueble" />
+            <Button fx:id="btnMisInmueblesMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirMisInmuebles" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Mis inmuebles" />
+            <Button fx:id="btnOfertasVendedorMenu" maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirOfertasRecibidas" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ofertas recibidas" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirPerfil" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Perfil" />
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="22.0" right="22.0" top="28.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox spacing="22.0">
+               <children>
+                  <VBox spacing="6.0">
+                     <children>
+                        <Label fx:id="lblTituloDashboard" text="INICIO">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblSubtituloDashboard" text="Bienvenido.Gestiona tus procesos inmobiliarios desde un solo lugar." textFill="#475569">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <TilePane fx:id="tileAcciones" hgap="22.0" prefColumns="3" tileAlignment="TOP_LEFT" vgap="22.0">
+                     <children>
+                        <VBox fx:id="cardCatalogo" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Catalogo">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Consulta inmuebles disponibles y filtra por ciudad, tipo, precio o area." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirCatalogo" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ver catalogo" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="cardFavoritos" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Favoritos">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Revisa los inmuebles que marcaste para compararlos luego." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirFavoritos" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ver favoritos" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="cardOfertasComprador" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Mis ofertas">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Haz seguimiento a ofertas pendientes, aceptadas o rechazadas." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirOfertasComprador" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ver mis ofertas" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="cardPublicar" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Publicar inmueble">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Registra una propiedad en venta o arriendo dentro del inventario." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirPublicarInmueble" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Publicar" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="cardMisInmuebles" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Mis inmuebles">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Administra tus publicaciones, disponibilidad y detalles comerciales." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirMisInmuebles" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Gestionar" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="cardOfertasVendedor" prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Ofertas recibidas">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Acepta, rechaza o responde propuestas hechas sobre tus inmuebles." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirOfertasRecibidas" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ver ofertas" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="205.0" prefWidth="250.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+                           <children>
+                              <Label text="Perfil">
+                                 <font>
+                                    <Font name="System Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Consulta tus datos, reputacion, rango y beneficios disponibles." textFill="#64748B" wrapText="true" />
+                              <Region VBox.vgrow="ALWAYS" />
+                              <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#abrirPerfil" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Ver perfil" />
+                           </children>
+                           <padding>
+                              <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </TilePane>
+               </children>
+               <padding>
+                  <Insets bottom="36.0" left="36.0" right="36.0" top="34.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="42.0" style="-fx-background-color: rgba(255,255,255,0.58);" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="InmoSmart" textFill="#475569" />
+         </children>
+         <padding>
+            <Insets left="24.0" right="28.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
