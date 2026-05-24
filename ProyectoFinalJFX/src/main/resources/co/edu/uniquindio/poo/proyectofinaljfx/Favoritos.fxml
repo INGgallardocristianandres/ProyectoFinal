@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="740.0" prefWidth="1120.0" style="-fx-background-color: linear-gradient(to top,#F8FAFC,#AAD2F9);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectofinaljfx.viewController.FavoritosController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="86.0" spacing="16.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+         <children>
+            <Label text="Favoritos">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#refrescar" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Refrescar" />
+            <Button mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Volver" />
+         </children>
+         <padding>
+            <Insets left="32.0" right="32.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox spacing="16.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+         <children>
+            <SplitPane dividerPositions="0.69">
+               <items>
+                  <TableView fx:id="tblFavoritos" prefHeight="500.0">
+                     <columns>
+                        <TableColumn fx:id="colCodigo" prefWidth="95.0" text="Codigo" />
+                        <TableColumn fx:id="colNombre" prefWidth="180.0" text="Nombre" />
+                        <TableColumn fx:id="colCiudad" prefWidth="130.0" text="Ciudad" />
+                        <TableColumn fx:id="colTipo" prefWidth="120.0" text="Tipo" />
+                        <TableColumn fx:id="colOferta" prefWidth="105.0" text="Oferta" />
+                        <TableColumn fx:id="colValor" prefWidth="130.0" text="Valor" />
+                        <TableColumn fx:id="colEstado" prefWidth="115.0" text="Estado" />
+                     </columns>
+                  </TableView>
+                  <TextArea fx:id="txtDetalle" editable="false" prefWidth="300.0" wrapText="true" />
+               </items>
+            </SplitPane>
+            <HBox alignment="CENTER_RIGHT" spacing="12.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#realizarOferta" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Realizar oferta" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="42.0" left="52.0" right="52.0" top="42.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

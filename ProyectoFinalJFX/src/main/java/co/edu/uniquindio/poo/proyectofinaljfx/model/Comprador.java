@@ -9,8 +9,8 @@ public class Comprador extends MiembroInmobiliario {
     private List<Oferta> ofertasRealizadas;
     private List<Busqueda> historialBusquedas;
 
-    public Comprador(String id, String nombre, String identificacion, String telefono, String correo, String contrasenia, InmoSmart ownedByInmoSmart) {
-        super(id, nombre, identificacion, telefono, correo, contrasenia, ownedByInmoSmart);
+    public Comprador(String id, String nombre, String identificacion, String telefono, String correo, String userName,String contrasenia, InmoSmart ownedByInmoSmart) {
+        super(id, nombre, identificacion, telefono, correo, userName, contrasenia, ownedByInmoSmart);
         this.favoritos = new ArrayList<>();
         this.ofertasRealizadas = new ArrayList<>();
         this.historialBusquedas = new ArrayList<>();

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: linear-gradient(to top,#F8FAFC,#AAD2F9);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.proyectofinaljfx.viewController.PerfilController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="86.0" spacing="16.0" style="-fx-background-color: white; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 2);">
+         <children>
+            <Label text="Perfil de usuario">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#volver" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-background-radius: 8;" text="Volver" />
+         </children>
+         <padding>
+            <Insets left="32.0" right="32.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <VBox spacing="22.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0, 0, 3);">
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label fx:id="lblNombre" text="Nombre">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblRol" text="Rol" textFill="#64748B">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <GridPane hgap="20.0" vgap="16.0">
+               <columnConstraints>
+                  <ColumnConstraints percentWidth="28.0" />
+                  <ColumnConstraints percentWidth="72.0" />
+               </columnConstraints>
+               <children>
+                  <Label text="Identificacion" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                  <Label fx:id="lblIdentificacion" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  <Label text="Usuario" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                  <Label fx:id="lblUsuario" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Correo" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                  <Label fx:id="lblCorreo" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Telefono" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                  <Label fx:id="lblTelefono" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Fecha de registro" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                  <Label fx:id="lblFechaRegistro" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Puntos" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                  <Label fx:id="lblPuntos" text="-" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Rango" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                  <Label fx:id="lblRango" text="-" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Beneficio" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                  <Label fx:id="lblBeneficio" text="-" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="38.0" left="44.0" right="44.0" top="38.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets bottom="52.0" left="100.0" right="100.0" top="52.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
