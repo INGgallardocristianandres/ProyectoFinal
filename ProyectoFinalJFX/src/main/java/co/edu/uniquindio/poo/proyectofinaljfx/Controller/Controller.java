@@ -67,6 +67,10 @@ public class Controller {
         return usuarioActual;
     }
 
+    public void cerrarSesion() {
+        usuarioActual = null;
+    }
+
     public InmoSmart getInmoSmart() {
         return inmoSmart;
     }
