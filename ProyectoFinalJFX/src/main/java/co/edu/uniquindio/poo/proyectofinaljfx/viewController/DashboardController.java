@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectofinaljfx.viewController;
 
+import co.edu.uniquindio.poo.proyectofinaljfx.App;
 import co.edu.uniquindio.poo.proyectofinaljfx.Controller.Controller;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.Comprador;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.MiembroInmobiliario;
@@ -101,7 +102,7 @@ public class DashboardController {
 
     @FXML
     private void abrirFavoritos() {
-        mostrarPendiente("Favoritos", "Aqui se mostraran los inmuebles favoritos del comprador.");
+        cambiarVista("Favoritos.fxml", "Favoritos");
     }
 
     @FXML
@@ -126,7 +127,7 @@ public class DashboardController {
 
     @FXML
     private void abrirPerfil() {
-        mostrarPendiente("Perfil", "Aqui se mostraran los datos, rango, puntos y beneficios del usuario.");
+        cambiarVista("Perfil.fxml", "Perfil");
     }
 
     @FXML
@@ -205,8 +206,7 @@ public class DashboardController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/co/edu/uniquindio/poo/proyectofinaljfx/" + fxml));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setTitle(titulo);
-            stage.setScene(new Scene(root));
+            App.cambiarVista(stage, root, titulo);
             stage.show();
         } catch (IOException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error de navegacion", "No fue posible cargar la vista " + fxml + ".");
@@ -217,8 +217,7 @@ public class DashboardController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/co/edu/uniquindio/poo/proyectofinaljfx/" + fxml));
             Stage stage = (Stage) txtBuscar.getScene().getWindow();
-            stage.setTitle(titulo);
-            stage.setScene(new Scene(root));
+            App.cambiarVista(stage, root, titulo);
             stage.show();
         } catch (IOException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error de navegacion", "No fue posible cargar la vista " + fxml + ".");
@@ -237,3 +236,4 @@ public class DashboardController {
         alert.showAndWait();
     }
 }
+

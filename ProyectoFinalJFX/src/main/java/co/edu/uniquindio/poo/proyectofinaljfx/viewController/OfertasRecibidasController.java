@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.proyectofinaljfx.viewController;
 
+import co.edu.uniquindio.poo.proyectofinaljfx.App;
 import co.edu.uniquindio.poo.proyectofinaljfx.Controller.Controller;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.EstadoOferta;
 import co.edu.uniquindio.poo.proyectofinaljfx.model.Oferta;
@@ -85,6 +86,11 @@ public class OfertasRecibidasController {
             return;
         }
 
+        if (oferta.getEstadoOferta() != EstadoOferta.ACEPTADA) {
+            mostrarAlerta(Alert.AlertType.WARNING, "Oferta no aceptada", "Primero debe aceptar la oferta antes de registrar la transaccion.");
+            return;
+        }
+
         controller.seleccionarOferta(oferta);
         cambiarVista(event, "RegistrarTransaccion.fxml", "Registrar transaccion");
     }
@@ -111,8 +117,7 @@ public class OfertasRecibidasController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/co/edu/uniquindio/poo/proyectofinaljfx/" + fxml));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setTitle(titulo);
-            stage.setScene(new Scene(root));
+            App.cambiarVista(stage, root, titulo);
             stage.show();
         } catch (IOException e) {
             mostrarAlerta(Alert.AlertType.ERROR, "Error de navegacion", "No fue posible cargar la vista " + fxml + ".");
@@ -127,3 +132,4 @@ public class OfertasRecibidasController {
         alert.showAndWait();
     }
 }
+
