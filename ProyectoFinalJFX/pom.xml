@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                co.edu.uniquindio.poo.proyectofinaljfx/co.edu.uniquindio.poo.proyectofinaljfx.HelloApplication
+                                co.edu.uniquindio.poo.proyectofinaljfx/co.edu.uniquindio.poo.proyectofinaljfx.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
