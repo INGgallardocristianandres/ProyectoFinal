@@ -31,6 +31,12 @@ public class Inmueble {
         this.estado = EstadoInmueble.DISPONIBLE;
         this.ofertasRecibidas = new ArrayList<>();
     }
+
+    /**
+     * Metodo para validar datos de entrada y que no sean inválidos
+     * @param valor
+     * @param area
+     */
     public static void validarDatos( double valor, double area) {
         if (valor < 0) throw new IllegalArgumentException("El valor no puede ser menor a 0");
         if (area < 0) throw new IllegalArgumentException("El area no puede ser menor a 0");

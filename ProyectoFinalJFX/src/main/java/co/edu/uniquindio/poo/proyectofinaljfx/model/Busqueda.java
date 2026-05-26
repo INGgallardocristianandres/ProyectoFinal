@@ -21,6 +21,13 @@ public class Busqueda {
         this.areaMinima = areaMinima;
         this.fecha = LocalDate.now();
     }
+
+    /**
+     * Metodo que valida datos de entrada para que no sean inválidos
+     * @param precioMinimo
+     * @param precioMaximo
+     * @param areaMinima
+     */
     public static void validarDatos(double precioMinimo, double precioMaximo, double areaMinima) {
         if (precioMinimo < 0 ) {
             throw new IllegalArgumentException("El precio mínimo no puede ser menor a 0");

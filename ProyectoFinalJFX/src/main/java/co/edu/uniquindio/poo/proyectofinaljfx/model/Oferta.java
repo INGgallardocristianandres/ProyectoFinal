@@ -20,6 +20,11 @@ public class Oferta {
         this.fecha = LocalDate.now();
         this.estadoOferta = EstadoOferta.PENDIENTE;
     }
+
+    /**
+     * Metodo usado para validar datos de entrada y que no sean inválidos
+     * @param montoOfrecido
+     */
     public static void validarDatos(double montoOfrecido){
         if (montoOfrecido < 0) throw  new IllegalArgumentException("El monto ofrecido no puede ser menor a 0");
     }

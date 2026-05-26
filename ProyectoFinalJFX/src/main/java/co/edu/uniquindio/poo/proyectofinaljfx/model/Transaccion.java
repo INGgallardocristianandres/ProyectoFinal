@@ -25,6 +25,12 @@ public class Transaccion {
         this.inmueble = inmueble;
         this.fechaTransaccion = LocalDate.now();
     }
+
+    /**
+     * Metodo implementado para validar datos de entrada para que no sean inválidos
+     * @param montoFinal
+     * @param comisionInmobiliaria
+     */
     public static void validarDatos(double montoFinal, double comisionInmobiliaria){
         if (montoFinal < 0) throw  new IllegalArgumentException("El monto final no puede ser menor a 0");
         if (comisionInmobiliaria < 0) throw  new IllegalArgumentException("La comisión inmobiliaria no puede ser menor a 0");
