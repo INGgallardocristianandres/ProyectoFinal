@@ -34,7 +34,7 @@ public abstract class MiembroInmobiliario implements IPuntuable, IBeneficiable{
     @Override
     public void actualizarPuntos(int puntosNuevos) {
         if (puntosNuevos < 0) {
-            throw new IllegalArgumentException("ERROR: No es posible agregar este valor, tiene que ser positivo " + puntosNuevos);
+            throw new IllegalArgumentException("No es posible agregar este valor, tiene que ser positivo " + puntosNuevos);
         }
         this.puntosReputacion += puntosNuevos;
         this.verificarRango();
